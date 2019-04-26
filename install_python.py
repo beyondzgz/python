@@ -19,17 +19,17 @@ cmd = 'wget '+url
 ret = os.system(cmd)
 if ret != 0:
     print('下载失败')
-
     sys.exit(1)
+
 if version == '2.7':
     package = 'Python-2.7.16.tgz'
 else:
     package = 'Python-3.7.3.tgz'
-cmd = 'tar xf'+package
+cmd = 'tar -xvf '+package
 ret = os.system(cmd)
 if ret != 0:
     os.system('rm -rf '+package)
-    print('下载失败')
+    print('解压失败')
     sys.exit(1)
 
 cmd = 'cd '+package+' && ./configure --prefix=/usr/local/pythonx && make && make install'
