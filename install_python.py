@@ -32,7 +32,7 @@ if ret == False:
         os.system('rm -rf '+package)
         print('解压失败')
         sys.exit(1)
-cmd = 'cd '+package+' && ./configure --prefix=/usr/local/python && make && make install'
+cmd = 'cd '+package+' && ./configure --prefix=/usr/local/python'+version+' && make && make install'
 ret = os.system(cmd)
 if ret != 0:
     print('编译源码失败')
