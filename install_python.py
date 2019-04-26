@@ -22,10 +22,10 @@ if ret != 0:
     sys.exit(1)
 
 if version == '2.7':
-    package = 'Python-2.7.16.tgz'
+    package = 'Python-2.7.16'
 else:
-    package = 'Python-3.7.3.tgz'
-cmd = 'tar -xvf '+package
+    package = 'Python-3.7.3'
+cmd = 'tar -xvf '+package+'.tgz'
 ret = os.system(cmd)
 if ret != 0:
     os.system('rm -rf '+package)
