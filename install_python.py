@@ -1,5 +1,5 @@
 #coding=utf-8
-import io
+import os
 import sys
 
 if os.getuid()==0:
