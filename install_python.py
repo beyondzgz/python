@@ -15,6 +15,7 @@ elif version == '3.7':
 else:
     print('请输入正确的版本(2.7/3.7)')
     sys.exit(1)
+
 cmd = 'wget '+url
 ret = os.system(cmd)
 if ret != 0:
@@ -25,13 +26,15 @@ if version == '2.7':
     package = 'Python-2.7.16'
 else:
     package = 'Python-3.7.3'
-cmd = 'tar -xvf '+package+'.tgz'
-ret = os.system(cmd)
-if ret != 0:
-    os.system('rm -rf '+package)
-    print('解压失败')
-    sys.exit(1)
 
+ret = os.path.exists(package)
+if !ret:
+    cmd = 'tar -xvf '+package+'.tgz'
+    ret = os.system(cmd)
+    if ret != 0:
+        os.system('rm -rf '+package)
+        print('解压失败')
+        sys.exit(1)
 cmd = 'cd '+package+' && ./configure --prefix=/usr/local/python && make && make install'
 ret = os.system(cmd)
 if ret != 0:
