@@ -9,7 +9,7 @@ else:
 version = raw_input('请输入python版本(2.7/3.7)')
 if version == '2.7':
 	url='https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz'
-elif version == '3.7'
+elif version == '3.7':
 	url='https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz'
 else:
 	print('请输入正确的版本(2.7/3.7)')
@@ -33,7 +33,6 @@ if ret != 0:
 
 cmd = 'cd '+package+' && ./configure --prefix=/usr/local/pythonx && make && make install'
 ret = os.system(cmd)
-	if ret != 0:
+if ret != 0:
 	print('编译源码失败')
 	sys.exit(1)
-
