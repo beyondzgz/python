@@ -28,7 +28,7 @@ else:
     package = 'Python-3.7.3'
 
 ret = os.path.exists(package)
-if !ret:
+if ret == false:
     cmd = 'tar -xvf '+package+'.tgz'
     ret = os.system(cmd)
     if ret != 0:
