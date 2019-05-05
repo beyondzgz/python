@@ -24,7 +24,7 @@ print(L)
 # list切片
 L = []
 for x in range(1, 101):
-    L.insert(x, x)
+    L.append(x)
 
 print('slices')
 # L[0:3]表示，从索引0开始取，直到索引3为止，但不包括索引3

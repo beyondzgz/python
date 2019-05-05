@@ -1,7 +1,7 @@
 # 要生成list [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]，我们可以用range(1, 11)
 L = []
 for x in range(1, 11):
-    L.insert(x, x)
+    L.append(x)
 print(L)
 L = []
 # 但如果要生成[1x1, 2x2, 3x3, ..., 10x10]怎么做？方法一是循环：
@@ -60,4 +60,11 @@ L = []
 for m in 'ABC':
     for n in '123':
         L.append(m + n)
+print(L)
+# 利用 3 层for循环的列表生成式，找出对称的 3 位数。例如，121 就是对称数，因为从右到左倒过来还是 121。
+L = [100 * n1 + 10 * n2 + n3
+     for n1 in range(1, 10)
+     for n2 in range(10)
+     for n3 in range(10)
+     if n1 == n3]
 print(L)
